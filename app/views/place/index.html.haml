@@ -1,0 +1,24 @@
+%section.container
+
+  .row
+    .col-lg-3
+      .row
+        .h3 Filters
+      %div{id: "filters"}
+        %select.chosen-select{"data-placeholder" => "Choose a zipcode...", multiple: "multiple", style: "width:350px;", id: "zipcode_select"}
+          - @zipcodes.each do |zipcode|
+            %option{:value => zipcode.id}=zipcode.name
+        %select.chosen-select{"data-placeholder" => "Choose a reviewer...", multiple: "multiple", style: "width:350px;", id: "website_select"}
+          - @websites.each do |website|
+            %option{:value => website.id}=website.name
+        %select.chosen-select{"data-placeholder" => "Choose a place type...", multiple: "multiple", style: "width:350px;", id: "place_type_select"}
+          - @place_types.each do |place_type|
+            %option{:value => place_type.id}=place_type.name
+        .row
+          .h3 Results
+        .ro
+          %div#sidebar-map
+    .col-lg-9
+      %div{style: "width: 900px;"}
+      %div#map{style:"width: 900px; height: 600px;" }
+

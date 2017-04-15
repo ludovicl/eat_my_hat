@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EatMyHat</title>
+    <script src="//maps.google.com/maps/api/js"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <%= render "layouts/header" %>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <footer>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </footer>
+</html>
