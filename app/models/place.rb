@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: places
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  website    :string
+#  map_link   :string
+#  lonlat     :geography({:srid point, 4326
+#  street_id  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Place < ApplicationRecord
   belongs_to :street
   has_many :reviews
@@ -20,5 +34,4 @@ class Place < ApplicationRecord
       joins(:place_place_types).where(PlacePlaceType.arel_table[:place_type_id].in(types_id))
     end
   }
-
 end

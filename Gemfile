@@ -56,6 +56,9 @@ gem 'chosen-rails', '~> 1.5', '>= 1.5.2'
 # Var env in file
 gem 'dotenv-rails'
 
+# Pagination library
+gem 'will_paginate'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -72,6 +75,9 @@ group :development do
   gem 'rack-mini-profiler'
   # An IRB alternative and runtime developer console
   gem 'pry-rails'
+  # Add a comment summarizing the current schema to the top or bottom of each of your…
+  gem 'annotate'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

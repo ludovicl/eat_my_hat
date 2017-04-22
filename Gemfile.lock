@@ -41,6 +41,9 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (7.1.4)
     ast (2.3.0)
     builder (3.2.3)
@@ -216,12 +219,14 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activerecord-postgis-adapter (~> 4.0)
+  annotate
   byebug
   chosen-rails (~> 1.5, >= 1.5.2)
   coffee-rails (~> 4.2)
@@ -247,6 +252,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  will_paginate
 
 BUNDLED WITH
    1.13.7

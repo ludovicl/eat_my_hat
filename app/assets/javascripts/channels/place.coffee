@@ -21,8 +21,6 @@ App.place = App.cable.subscriptions.create "PlaceChannel",
         #because clusterer removes map property from marker
         marker.panTo()
         google.maps.event.trigger marker.getServiceObject(), 'click'
-        return
-      return
 
     createSidebar = (json_array) ->
       $('#sidebar-map').html('');
@@ -30,16 +28,12 @@ App.place = App.cable.subscriptions.create "PlaceChannel",
         $li = $(createSidebarLi(json))
         $li.appendTo '#sidebar-map'
         bindLiToMarker $li, json.marker
-        return
-      return
 
     handler = Gmaps.build('Google')
     handler.buildMap { internal: id: 'map' }, ->
       markers = handler.addMarkers(json_array)
       _.each json_array, (json, index) ->
         json.marker = markers[index]
-        return
       createSidebar json_array
       handler.bounds.extendWith markers
       handler.fitMapToBounds()
-      return

@@ -7,16 +7,15 @@
       %div{id: "filters"}
         %select.chosen-select{"data-placeholder" => "Choose a zipcode...", multiple: "multiple", style: "width:350px;", id: "zipcode_select"}
           - @zipcodes.each do |zipcode|
-            %option{:value => zipcode.id}=zipcode.name
+            %option{:value => zipcode.id}=zipcode.name.titleize
         %select.chosen-select{"data-placeholder" => "Choose a reviewer...", multiple: "multiple", style: "width:350px;", id: "website_select"}
           - @websites.each do |website|
-            %option{:value => website.id}=website.name
+            %option{:value => website.id}=website.name.titleize
         %select.chosen-select{"data-placeholder" => "Choose a place type...", multiple: "multiple", style: "width:350px;", id: "place_type_select"}
           - @place_types.each do |place_type|
-            %option{:value => place_type.id}=place_type.name
+            %option{:value => place_type.id}=place_type.name.titleize
         .row
           .h3 Results
-        .ro
           %div#sidebar-map
     .col-lg-9
       %div{style: "width: 900px;"}

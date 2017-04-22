@@ -8,13 +8,12 @@ module Markers
                   .filter_on_zipcode(filters[:filters_id]['zipcode'])
                   .filter_on_website(filters[:filters_id]['website'])
                   .filter_on_restaurant_type(filters[:filters_id]['place_type'])
-
     markers = []
     places.each do |place|
       marker = {}
       marker[:lat] = place.lonlat.y
       marker[:lng] = place.lonlat.x
-      marker[:name] = place.name
+      marker[:name] = place.name.titleize
       marker[:infowindow] = custom_infowindow(place)
       markers << marker
     end
@@ -22,6 +21,7 @@ module Markers
   end
 
   private
+
   def custom_infowindow(place)
     infowindow = if !place.website.blank?
                    "<b> <a href='#{place.website}' target=_blank> #{place.name.titleize} </a> </b>"
@@ -50,6 +50,6 @@ module Markers
       infowindow += "<li> <a href='#{review.link}' target=_blank> #{review.website.name.titleize} </a> </li>"
     end
     infowindow += '</ul>'
+    infowindow
   end
-
 end
